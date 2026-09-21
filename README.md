@@ -1,4 +1,3 @@
-```markdown
 # Universal Stream Player (USP)
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
