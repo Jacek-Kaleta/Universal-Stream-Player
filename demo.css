@@ -1,0 +1,275 @@
+* {
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    html, body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        background-color: #121212;
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 10px;
+        margin: 0;
+    }
+
+    .demo-header {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .demo-header h1 {
+        font-size: 22px;
+        margin: 0 0 8px 0;
+        color: #ffffff;
+    }
+
+    .demo-header p {
+        font-size: 14px;
+        color: #aaaaaa;
+        margin: 0;
+    }
+
+    .demo-config-panel {
+        background-color: #181824;
+        border: 1px solid #2d2d42;
+        border-radius: 12px;
+        padding: 18px;
+        margin-top: 20px;
+        width: 100%;
+        max-width: 720px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .config-title {
+        font-size: 15px;
+        font-weight: 600;
+        color: #00ff88;
+        border-bottom: 1px solid #2d2d42;
+        padding-bottom: 8px;
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .config-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 14px;
+    }
+
+    .config-group {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .config-group label {
+        font-size: 12px;
+        color: #aaa;
+        font-weight: 500;
+    }
+
+    .config-select, .config-input {
+        background-color: #252538;
+        border: 1px solid #3f3f5a;
+        color: #fff;
+        padding: 8px 12px;
+        border-radius: 6px;
+        font-size: 13px;
+        outline: none;
+    }
+
+    .config-select:focus, .config-input:focus {
+        border-color: #0084ff;
+    }
+
+    .checkbox-label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 13px;
+        color: #ddd;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .checkbox-label input[type="checkbox"] {
+        appearance: none;
+        -webkit-appearance: none;
+        width: 18px;
+        height: 18px;
+        border: 2px solid #0084ff;
+        border-radius: 4px;
+        background-color: transparent !important;
+        cursor: pointer;
+        display: inline-grid;
+        place-content: center;
+        margin: 0;
+        outline: none;
+    }
+
+    .checkbox-label input[type="checkbox"]::before {
+        content: "";
+        width: 10px;
+        height: 10px;
+        transform: scale(0);
+        transition: 120ms transform ease-in-out;
+        clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+        background-color: #0084ff;
+    }
+
+    .checkbox-label input[type="checkbox"]:checked::before {
+        transform: scale(1);
+    }
+
+    .demo-btn-apply {
+        background-color: #0084ff;
+        color: #ffffff;
+        border: none;
+        padding: 10px 18px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.2s, transform 0.1s;
+        align-self: flex-start;
+        margin-top: 4px;
+    }
+
+    .demo-btn-apply:hover {
+        background-color: #2b95ff;
+        transform: translateY(-1px);
+    }
+
+    .external-controls-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        margin-top: 20px;
+        width: 100%;
+        max-width: 720px;
+    }
+
+    .external-controls {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        align-items: center;
+        padding: 12px 20px;
+        max-width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .demo-btn {
+        background-color: #2c2c3e;
+        color: #fff;
+        border: 1px solid #44445e;
+        padding: 10px 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 13px;
+        outline: none;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .demo-btn:active {
+        outline: none;
+        box-shadow: none;
+    }
+
+    .demo-btn-action { background-color: #0084ff; border-color: #0066cc; }
+    .demo-btn-stop { background-color: #e53935; border-color: #c62828; }
+
+    .time-display-badge {
+        background-color: #181824;
+        border: 1px solid #33334d;
+        padding: 8px 18px;
+        border-radius: 20px;
+        font-family: monospace;
+        font-size: 15px;
+        font-weight: 600;
+        color: #00ff88;
+        letter-spacing: 1px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .time-display-badge.is-live { color: #ff4757; }
+    .buffer-info { color: #aaaaff; font-size: 13px; margin-left: 6px; }
+
+    .volume-control-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: #1e1e2f;
+        padding: 8px 20px;
+        border-radius: 20px;
+        border: 1px solid #33334d;
+        max-width: 100%;
+    }
+
+    .volume-icon {
+        font-size: 18px;
+        color: #0084ff;
+        cursor: pointer;
+        user-select: none;
+        transition: transform 0.1s;
+        display: flex;
+        align-items: center;
+        background: transparent !important;
+        outline: none;
+    }
+
+    .volume-icon:hover { transform: scale(1.2); }
+
+    .volume-slider {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 120px;
+        height: 6px;
+        border-radius: 3px;
+        background: #33334d;
+        outline: none;
+        cursor: pointer;
+        accent-color: #ffffff;
+    }
+
+    .volume-slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: #ffffff;
+        cursor: pointer;
+    }
+
+    .volume-slider::-moz-range-thumb {
+        width: 14px;
+        height: 14px;
+        border: none;
+        border-radius: 50%;
+        background: #ffffff;
+        cursor: pointer;
+    }
+
+    .volume-text {
+        font-size: 13px;
+        font-family: monospace;
+        color: #ccc;
+        min-width: 40px;
+    }
